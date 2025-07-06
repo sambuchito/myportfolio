@@ -9,39 +9,30 @@ function myFunction() {
 
 //saludar();
 
-// Obtener el modal
+// Obtener referencias
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
-const modalText = document.getElementById("modal-text");
+const modalBody = document.getElementById("modal-body");
 const closeBtn = document.querySelector(".close-btn");
 
-// Datos para cada ícono
-const skillData = {
-  tester: {
-    title: "Investors Trust",
-    text: "Manual QA Tester (2024 - Present). Working on a fintech app for brokers: functional testing, reporting bugs and collaborating with the dev team. "
-  },
-  movie: {
-    title: "Movie Cinemas",
-    text: "Customer Service Representative (2021 - 2022). Ticket sales, concessions and operational support in a high-traffic environment."
-  }
-};
-
-// Función para abrir modal con contenido dinámico
-function openModal(skill) {
-  modalTitle.textContent = skillData[skill].title;
-  modalText.textContent = skillData[skill].text;
+// Abrir modal con datos dinámicos
+function openModal(title, content) {
+  modalTitle.textContent = title;
+  modalBody.innerHTML = content; // soporta HTML
   modal.style.display = "block";
+  document.body.classList.add("modal-open"); // bloquea scroll
 }
 
 // Cerrar modal
-closeBtn.onclick = function() {
+function closeModal() {
   modal.style.display = "none";
-};
+  document.body.classList.remove("modal-open"); // habilita scroll
+}
 
-// Cerrar al hacer clic fuera del contenido
-window.onclick = function(event) {
+closeBtn.onclick = closeModal;
+
+window.onclick = function (event) {
   if (event.target === modal) {
-    modal.style.display = "none";
+    closeModal();
   }
 };
