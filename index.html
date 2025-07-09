@@ -2,380 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hi I'm Lu | And I'm trying</title>
-    <link rel="icon" type="image/x-icon" href="ALL/IMG/unnamed.png" />
-    <link rel="stylesheet" href="ALL/CSS/base.css" />
-    <link rel="stylesheet" href="ALL/CSS/modal.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish" />  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lu Rossi | Portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./ALL/CSS/base.css" />
+    <link rel="stylesheet" href="./ALL/CSS/cssPost.css" />
+    <link rel="stylesheet" href="./ALL/CSS/layout.css" />
+    <link rel="stylesheet" href="./ALL/CSS/modal.css" />    
+    <link rel="stylesheet" href="./ALL/CSS/modal-skills.css" />
+    <link rel="stylesheet" href="./ALL/CSS/navigation.css" />
   </head>
 
   <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <div class="nav-title-group">
-        <h1 class="header-title">Lu Rossi</h1>
-        <span class="tagline">QA Tester - Web Dev Learner - Orca Lover </span>
-      </div>
-      <ul class="navigation">
-        <li><a href="#more-about" class="nav-link">About Me</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#contact-me" class="nav-link">Contact</a></li>
-      </ul>
-    </nav>
+    <!-- Navigation Component -->
+    <div id="navigation-component"></div>
 
-    <!-- Hero Section -->
-    <section class="hero" id="about">
-      <img src="ALL/IMG/cara-mia-new.webp" alt="lu-by-tity" loading="lazy" class="hero-img" />
-      <div class="bio">
-        <h2 class="bio-title" id="bio-title">About Me</h2>
-        <p class="bio-text">
-          Hello, is it me you looking for. If you don't know who I am, then what are you doing here?
-          This page is a work in progress in case you haven't noticed. I hope you enjoy your stay and everything works as planned, and if not, please report!
+    <!-- Hero Component -->
+    <div id="hero-component"></div>
 
-          Hey! I'm Lu — a QA tester and web developer-in-progress based in Montevideo.  
-          I started this site as a way to bring my ideas, projects, and odd skills together in one place.  
+    <!-- More about Component -->
+    <div id="more-about-component"></div>
 
-          This portfolio is part CV, part playground. So feel free to explore — and report anything that breaks
-        </p>
-      </div>
-    </section>
+    <!-- Projects Component -->
+    <div id="projects-component"></div>
 
-    <!-- More About Me Section -->
-    <section class="more-about-section" id="more-about">
-      <div class="more-about-content">
-        <h2 class="more-about-title" id="more-about-title">More About Me</h2>
-        <p class="more-about-text">
-          QA Tester & Web Developer with experience in both manual testing and web development. Passionate about building clean, functional user experiences and ensuring software quality through detailed testing and documentation.
-        </p>
-        <p class="more-about-text">
-          I’m currently transitioning into tech after years of working in fast-paced, people-focused roles.  
-          What started with curiosity about software testing turned into a growing interest in how things are built — and how to break them (on purpose).
-        </p>
-        <p class="more-about-text">
-          I’m a hands-on learner. I like tinkering, googling things at 2 a.m., and making messy code a little cleaner each time.  
-          I’m especially drawn to projects that mix logic with creativity — whether it’s coding, designing, or editing.
-        </p>
-        <p class="more-about-text">
-          I’m now studying FullStack development at BIOS and completing a mid-term project for the Certified Tech Developer program at Digital House,  
-          where I get to combine my testing background with front-end and back-end experience.
-        </p>
-      </div>
-    </section>
+    <!-- Skills Component -->
+    <div id="skills-component"></div>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-      <h2 class="skills-header">Some of my skills</h2>
+    <!-- Contact Component -->
+    <div id="contact-component"></div>
 
-      <div class="skills-container">
-        <div class="first-set animate__animated animate__pulse">
-          
-            <img
-              src="ALL/ICO/bug-debug-fix-fixing-qa-svgrepo-com.svg"
-              alt="tester"
-              title="soy tester :)"
-              loading="lazy"
-              class="icon"
-              onclick="openModal('tester')"
-            />
-          
-          <a href="indexPost.html" target="_blank">
-            <img
-              src="ALL/ICO/premiere-svgrepo-com.svg"
-              alt="premiere-pro"
-              title="a veces edito"
-              loading="lazy"
-              class="icon"
-            />
-          </a>
-          <a href="indexPost.html" target="_blank">
-            <img
-              src="ALL/ICO/usher-svgrepo-com.svg"
-              alt="movie"
-              title="mi experiencia laboral"
-              loading="lazy"
-              class="icon"
-            />
-          </a>
-        </div>
+    <!-- Footer Component -->
+    <div id="footer-component"></div>
+    
+    <!-- Modal Component -->
+    <div id="modal-component"></div>
 
-        <div class="second-set animate__animated animate__pulse">
-          <a href="indexPost.html" target="_blank">
-            <img
-              src="ALL/ICO/graphic-vector-svgrepo-com.svg"
-              alt="graphic"
-              title="graphic design is my passion"
-              loading="lazy"
-              class="icon icon-card"
-            />
-          </a>
-          <a href="indexPost.html" target="_blank">
-            <img
-              src="ALL/ICO/programmer-svgrepo-com.svg"
-              alt="development"
-              title="desarrollo web"
-              loading="lazy"
-              class="icon"
-            />
-          </a>
-          <a href="indexPost.html" target="_blank">
-            <img
-              src="ALL/ICO/mask-solid.svg"
-              alt="salesman"
-              title="vendo humo"
-              loading="lazy"
-              class="icon"
-            />
-          </a>
-        </div>
-      </div>
-    </section>
+    <!-- Skills Modal Component -->
+    <div id="modal-skills-component"></div>
 
-    <!-- Modal container -->
-     <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close-btn">&times;</span>
-    <h3 id="modal-title">Title Here</h3>
-    <div id="modal-body">Modal content will go here.</div>
-  </div>
-</div>
+    <!-- Social icons Component -->
+    <div id="social-icons-component"></div>
 
-
-
-    <!-- Projects Section -->
-    <section class="projects" id="projects">
-      <h2 class="projects-title" id="project">Some of my recent projects</h2>
-      <div class="projects-container">
-        <div class="project-card project-card-container">
-          <img
-            src="ALL/ICO/bug-svgrepo-com.svg"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">As a Tester</h3>
-          <p class="project-details">
-            It was back in 2020 when my cousin suggested me to pursue a career as a Software Tester.
-            What is a Software Tester, you ask? Let me tell you, I still wonder.
-          </p>
-          <a href="indexPost.html" title="Don't click" target="_blank" class="project-link"
-            >Take a look!</a
-          >
-        </div>
-        <div class="project-card project-card-container">
-          <img
-            src="ALL/ICO/editing-editor-svgrepo-com.svg"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Post Production</h3>
-          <p class="project-details">
-            Even earlier years when I dived into this world. Initially fascinated by special effects, little did I
-            imagine I would love video editing this much.
-          </p>
-          <a href="indexPost.html" title="Never gonna click" target="_blank" class="project-link"
-            >Take a look!</a
-          >
-        </div>
-        <div class="project-card project-card-container">
-          <img
-            src="ALL/ICO/development-web-development-svgrepo-com.svg"
-            alt="greeny-earth"
-            loading="lazy"
-            class="project-pic"
-          />
-          <h3 class="project-title">Web Development</h3>
-          <p class="project-details">
-            Not long ago I embarked on this wonderful journey. Encouraged by my desire to become an automated tester,
-            here we are squeezing all the juice.
-          </p>
-          <a href="indexPost.html" title="Material" target="_blank" class="project-link"
-            >Take a look!</a
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section class="experience-section" id="experience">
-      <h2 class="experience-title" id="experience-title">Professional Experience</h2>
-      <table class="experience-table">
-        <tr class="table-headers">
-          <th class="column-title">Company/Organization</th>
-          <th class="column-title">Position</th>
-          <th class="column-title">Location</th>
-          <th class="column-title">From - To</th>
-        </tr>
-
-        <tr class="job-row-a">
-          <td class="job-cell">Esri Argentina</td>
-          <td class="job-cell">Head of Development Team</td>
-          <td class="job-cell">Buenos Aires (Argentina)</td>
-          <td class="job-cell">March 2014 - Present</td>
-        </tr>
-        <tr class="job-row-b">
-          <td class="job-cell">Upplication</td>
-          <td class="job-cell">Front-end Developer</td>
-          <td class="job-cell">Montevideo</td>
-          <td class="job-cell">November 2013 - March 2015</td>
-        </tr>
-        <tr class="job-row-c">
-          <td class="job-cell">Universidad de la República - Engineering</td>
-          <td class="job-cell">Programming Professor 1</td>
-          <td class="job-cell">Montevideo</td>
-          <td class="job-cell">November 2013 - March 2015</td>
-        </tr>
-        <tr class="job-row-d">
-          <td class="job-cell">Google Developers Group</td>
-          <td class="job-cell">National Coordinator</td>
-          <td class="job-cell">Buenos Aires (Argentina)</td>
-          <td class="job-cell">September 2012 - January 2013</td>
-        </tr>
-      </table>
-      <br /><br />
-      <hr />
-      <br /><br />
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact-me">
-      <h2>Contact Me</h2>
-      <div class="contact-form-wrapper">
-        <div class="contact-form">
-          <form action="/action_page.php" autocomplete="on" method="post">
-            <div class="form-control">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                name="sender-name"
-                placeholder="Write your name"
-                class="input-field"
-                required
-              />
-            </div>
-            <div class="form-control">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                type="email"
-                name="sender-email"
-                placeholder="Enter your email"
-                class="input-field"
-                required
-              />
-            </div>
-            <div class="form-control">
-              <label for="select-reason">Select reason</label>
-              <select id="reason" name="reason" required>
-                <option value="testing">Testing</option>
-                <option value="editing">Editing</option>
-                <option value="development">Web Development</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
-            <div class="form-control">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                cols="60"
-                rows="10"
-                placeholder="Write your message"
-                class="input-field"
-                required
-              ></textarea>
-            </div>
-            <input
-              id="submit-btn"
-              type="submit"
-              value="Send"
-              class="submit-btn"
-            />
-            <input
-              id="reset-btn"
-              type="reset"
-              onclick="alert('Watch out, this will clear everything')"
-              value="Reset"
-              class="reset-btn"
-            />
-          </form>
-        </div>
-      </div>
-    </section>
-    <br />
-
-    <!-- Social Icons Section (Fixed right) -->
-    <div class="social-icons">
-      <a href="#" target="_blank"
-        ><img
-          src="ALL/ICO/costado-red-1443-svgrepo-com.svg"
-          alt="random"
-          loading="lazy"
-          class="social-icon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="ALL/ICO/costado-linkedin-161-svgrepo-com.svg"
-          alt="LinkedIn"
-          loading="lazy"
-          class="social-icon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="ALL/ICO/costado-youtube-168-svgrepo-com.svg"
-          alt="YouTube"
-          loading="lazy"
-          class="social-icon"
-      /></a>
-      <a href="#" target="_blank"
-        ><img
-          src="ALL/ICO/costado-github-142-svgrepo-com.svg"
-          alt="Github"
-          class="social-icon"
-      /></a>
-    </div>
-
-    <!-- Footer Section -->
-    <footer class="page-footer">
-      Bye
-      <section class="footer-icons" id="footer-icons">
-        <div class="footer-icons-container">
-          <div class="first-set-footer-icons">
-            <a href="indexPost.html" target="_blank">
-              <img
-                src="ALL/ICO/horse-svgrepo-com.svg"
-                alt="hey"
-                title="hey"
-                loading="lazy"
-                class="footer-icon"
-              />
-            </a>
-            <a href="indexPost.html" target="_blank">
-              <img
-                src="ALL/ICO/horse-face-svgrepo-com.svg"
-                alt="guey"
-                title="guey"
-                loading="lazy"
-                class="footer-icon"
-              />
-            </a>
-            <a href="indexPost.html" target="_blank">
-              <img
-                src="ALL/ICO/horse-svgrepo-com-2.svg"
-                alt="neigh"
-                title="bai"
-                loading="lazy"
-                class="footer-icon"
-              />
-            </a>
-          </div>
-        </div>
-      </section>
-    </footer>
-    <script src="ALL/JS/app.js"></script>
+    <script src="./ALL/JS/app.js"></script>
+    <script src="./ALL/JS/component-loader.js"></script>
+    <script src="./ALL/JS/modal.js"></script>
+    <script src="./ALL/JS/modal-skills.js"></script>
   </body>
 </html>

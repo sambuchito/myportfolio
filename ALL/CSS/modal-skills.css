@@ -1,4 +1,4 @@
-.modal-projects {
+.modal-skills {
   visibility: hidden;
   opacity: 0;
   position: fixed;
@@ -11,19 +11,17 @@
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.modal-projects--show {
+.modal-skills--show {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-.modal-projects--hide {
+.modal-skills--hide {
   visibility: hidden;
   opacity: 0;
-  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
 }
 
-.modal-projects__content {
+.modal-skills__content {
   background-color: #fff;
   margin: 8% auto;
   padding: 2rem;
@@ -31,22 +29,22 @@
   width: 90%;
   max-width: 600px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transform: translateY(-100vh) scale(0.95);
+  transform: translateX(-100vw) scale(0.95);
   opacity: 0;
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease;
 }
 
-.modal-projects--show .modal-projects__content {
-  transform: translateY(0) scale(1);
+.modal-skills--show .modal-skills__content {
+  transform: translateX(0) scale(1);
   opacity: 1;
 }
 
-.modal-projects--hide .modal-projects__content {
-  transform: translateY(100vh) scale(1.01);
+.modal-skills--hide .modal-skills__content {
+  transform: translateX(100vw) scale(1.01);
   opacity: 0;
 }
 
-.modal-projects__header {
+.modal-skills__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -54,33 +52,52 @@
   margin-bottom: 1rem;
 }
 
-.modal-projects__header h2 {
+.modal-skills__header h2 {
   margin: 0;
   font-size: 1.5rem;
 }
 
-.modal-projects__close-btn {
+.modal-skills__close-btn {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   color: #888;
 }
 
-.modal-projects__close-btn:hover {
+.modal-skills__close-btn:hover {
   color: #333;
 }
 
-.modal-projects__body p {
+.modal-skills__body p {
   margin: 0.5rem 0;
 }
 
-.modal-projects__description ul {
+.modal-skills__description ul {
   padding-left: 1.2rem;
   list-style: disc;
 }
 
-.modal-projects__tools {
+.modal-skills__tools {
   margin-top: 1rem;
   font-style: italic;
   color: #555;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

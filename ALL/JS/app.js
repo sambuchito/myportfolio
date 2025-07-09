@@ -7,7 +7,6 @@ function myFunction() {
     alert("Hola!, como carancho estas?");
 }
 
-//saludar();
 
 // Obtener referencias
 const modal = document.getElementById("modal");

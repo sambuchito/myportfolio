@@ -1,0 +1,66 @@
+<!-- Contact Section -->
+    <section class="contact" id="contact-me">
+      <h2>Contact Me</h2>
+      <div class="contact-form-wrapper">
+        <div class="contact-form">
+          <form action="/action_page.php" autocomplete="on" method="post">
+            <div class="form-control">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="sender-name"
+                placeholder="Write your name"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="sender-email"
+                placeholder="Enter your email"
+                class="input-field"
+                required
+              />
+            </div>
+            <div class="form-control">
+              <label for="select-reason">Select reason</label>
+              <select id="reason" name="reason" required>
+                <option value="testing">Testing</option>
+                <option value="editing">Editing</option>
+                <option value="development">Web Development</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                cols="60"
+                rows="10"
+                placeholder="Write your message"
+                class="input-field"
+                required
+              ></textarea>
+            </div>
+            <input
+              id="submit-btn"
+              type="submit"
+              value="Send"
+              class="submit-btn"
+            />
+            <input
+              id="reset-btn"
+              type="reset"
+              onclick="alert('Watch out, this will clear everything')"
+              value="Reset"
+              class="reset-btn"
+            />
+          </form>
+        </div>
+      </div>
+    </section>
