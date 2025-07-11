@@ -35,3 +35,21 @@ window.onclick = function (event) {
     closeModal();
   }
 };
+
+const toggleDarkMode = document.getElementById("dark-mode-toggle");
+console.log(toggleDarkMode);
+
+if (toggleDarkMode) {
+  toggleDarkMode.addEventListener("click", (e) => {
+    e.preventDefault(); // evita salto
+    document.body.classList.toggle("dark-mode");
+    console.log("🌙 Modo oscuro activado");
+  });
+}
+
+// Cargar preferencia guardada
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+}
+
+
