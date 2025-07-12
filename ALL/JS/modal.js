@@ -1,8 +1,7 @@
 function initModalProjects() {
   const modal = document.getElementById("modal-projects");
   if (!modal) {
-    console.warn("Modal Projects no encontrado todavía, reintentando...");
-    setTimeout(initModalProjects, 100);
+    console.error("Modal Projects no encontrado todavía, reintentando...");
     return;
   }
 

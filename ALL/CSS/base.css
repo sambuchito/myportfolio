@@ -18,6 +18,14 @@
   --transition: 0.3s;
 }
 
+:root.dark-mode {
+  --background-color: #000000;
+  --primary-color: #ffffff;
+  --secondary-color: #ee1b0f;
+  --primary-shadow: #222222;
+  --secondary-shadow: #444444;
+}
+
 html {
   scroll-behavior: smooth;
   word-break: break-all;
@@ -64,6 +72,7 @@ ul {
 a {
   text-decoration: none;
   color: var(--secondary-color);
+  background-color: var(--background-color);
 }
 
 a:hover {
@@ -72,7 +81,7 @@ a:hover {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: var(--background-color) ;
   color: var(--primary-color);
 }
 
@@ -84,6 +93,16 @@ body.dark-mode {
   --secondary-shadow: #444444;
 }
 
+#more-about-component,
+#navigation-component,
+#hero-component,
+#projects-component,
+#skills-component,
+#contact-component,
+#footer-component,
+#modal-component {  
+  background-color: var(--background-color);
+}
 
 nav {
   position: sticky;
@@ -103,11 +122,13 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  background-color: var(--background-color);
 }
 
 .header-title {
   font-size: xx-large;
   font-weight: var(--bolder-font);
+  background-color: var(--background-color);
 }
 
 
@@ -132,6 +153,7 @@ nav a.nav-link:hover {
 nav ul.navigation {
   display: flex;
   gap: 1.9rem;
+  background-color: var(--background-color);
   text-decoration: var(--bold-font);
 }
 
@@ -161,6 +183,7 @@ nav ul.navigation li {
   margin: auto;
   padding: 2rem;
   margin-bottom: 12rem;
+  background-color: var(--background-color);
 }
 
 @keyframes fadeInUp {
@@ -173,7 +196,8 @@ nav ul.navigation li {
 .hero-img {
   margin-top: 3rem;
   height: 42rem;
-  width: 42rem;
+  width: 42rem;  
+  background-color: var(--background-color);
 }
 
 .bio {
@@ -192,6 +216,7 @@ nav ul.navigation li {
   font-size: 2.1rem;
   font-weight: 700;
   color: var(--secondary-color, #ee1b0f);
+  background-color: var(--background-color);
 }
 
 .bio-text {
@@ -203,6 +228,7 @@ nav ul.navigation li {
   hyphens: auto;
   font-size: 1.1rem;
   color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 @media (max-width: 768px) {
@@ -221,6 +247,7 @@ nav ul.navigation li {
   }
 }
 
+
 .more-about-section {
   display: flex;
   align-items: center;
@@ -229,7 +256,7 @@ nav ul.navigation li {
   margin: 3rem auto;
   padding: 2rem;
   opacity: 0;
-  background-color: var(--background-color, #fff);
+  background-color: var(--background-color);
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transform: translateY(30px);
@@ -247,6 +274,7 @@ nav ul.navigation li {
   border-radius: 0;
   background: #fff;
   box-shadow: none;
+  background-color: var(--background-color);
 }
 
 .more-about-title {
@@ -254,6 +282,7 @@ nav ul.navigation li {
   font-size: 2rem;
   font-weight: 700;
   color: var(--secondary-color, #ee1b0f);
+  background-color: var(--background-color);
 }
 
 .more-about-text {
@@ -267,6 +296,7 @@ nav ul.navigation li {
   padding: 0;
   font-size: 1.1rem;
   color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 
@@ -295,10 +325,17 @@ nav ul.navigation li {
   text-align: center;
   margin-top: 5rem;
   margin-bottom: 12rem;
+  background-color: var(--background-color);
 }
 
 .skills-header {
   margin-bottom: 1.7rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.first-set {
+  background-color: var(--background-color);
 }
 
 .skills-container img.icon {
@@ -310,7 +347,6 @@ nav ul.navigation li {
   overflow: hidden;
   width: 11.875rem;
   height: 11.25rem;
-  background-color: #fff;
   border-radius: var(--radius-lg, 12px);
   border: 2px solid rgba(0, 0, 0, 0.1);
   box-shadow: var(--shadow-medium, 0 4px 10px rgba(0, 0, 0, 0.2));

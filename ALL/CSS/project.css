@@ -9,41 +9,50 @@
 .project-pic {
   width: 65%;
   height: 60%;
+  background-color: var(--background-color);
 }
 
 .projects-container {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--background-color);
 }
 
 .projects-title {
   text-align: center;
   margin-bottom: 1.7rem;
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 .project-card {
   text-align: center;
   width: 21.875rem;
   padding: 1rem;
+  background-color: var(--background-color);
 }
 
 .project-card p {
   padding: 0.4rem;
+  background-color: var(--background-color);
 }
 
 .project-title {
   margin-bottom: var(--bottom-margin);
   text-align: center;
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 .project-details {
   margin-bottom: var(--bottom-margin);
   text-align: center;
+  color: var(--primary-color);
 }
 
 .project-card-container {
-  background-color: #fff;
+  background-color: var(--background-color);
   border-radius: 11px;
   box-shadow: 0 3px 10px var(--primary-shadow);
   padding: 20px;

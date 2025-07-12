@@ -1,10 +1,11 @@
 function initModalSkills() {
   const modal = document.getElementById("modal-skills");
   if (!modal) {
-    console.warn("Modal Skills no encontrado todavía, reintentando...");
-    setTimeout(initModalSkills, 100);
+    console.error("❌ Modal Skills no encontrado. Verifica que modal-skills.html esté cargado");
     return;
   }
+
+  console.log("✅ Modal Skills inicializado");
 
   const modalContent = modal.querySelector(".modal-skills__content");
   const closeBtn = modal.querySelector(".modal-skills__close-btn");
@@ -30,7 +31,7 @@ function initModalSkills() {
     modal.classList.remove("modal-skills--hide");
     modal.classList.add("modal-skills--show");
 
-    modalContent.style.transition = "transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease";
+    modalContent.style.transition = "transform 0.8s ease, opacity 0.5s ease";
     modalContent.style.transform = "translateX(0) scale(1)";
     modalContent.style.opacity = "1";
 
@@ -48,11 +49,8 @@ function initModalSkills() {
     }, 200);
   }
 
-  // Listeners solo para este modal
   closeBtn.onclick = closeModalSkills;
   modal.onclick = (e) => {
     if (e.target === modal) closeModalSkills();
   };
 }
-
-initModalSkills();

@@ -4,6 +4,7 @@
   position: fixed;
   right: 0.5rem;
   bottom: 25rem;
+  background-color: var(--background-color);
 }
 
 .social-icon {
@@ -12,6 +13,7 @@
   margin: 0.1rem;
   transition: transform 0.s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  background-color: var(--background-color);
 }
 
 .social-icon:hover {
@@ -26,16 +28,23 @@
   padding: 3px;
   background-color: white;
   color: var(--primary-color);
+  background-color: var(--background-color);
 }
 
 .footer-icons {
   max-width: 68.75rem;
   margin: auto;
   text-align: center;
+  background-color: var(--background-color);
+}
+
+.first-set-footer-icons {
+  background-color: var(--background-color);
 }
 
 .footer-icons-container img {
   padding: 1.25rem;
+  background-color: var(--background-color);
 }
 
 .footer-icon {
@@ -43,4 +52,5 @@
   height: 4.25rem;
   padding: 20px;
   margin: 10px;
+  background-color: var(--background-color);
 }

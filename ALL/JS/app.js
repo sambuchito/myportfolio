@@ -1,13 +1,3 @@
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-  } 
-
-  function clic(){
-    alert("Hola!, como carancho estas?");
-}
-
-
 // Obtener referencias
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
@@ -17,15 +7,15 @@ const closeBtn = document.querySelector(".close-btn");
 // Abrir modal con datos dinámicos
 function openModal(title, content) {
   modalTitle.textContent = title;
-  modalBody.innerHTML = content; // soporta HTML
+  modalBody.innerHTML = content;
   modal.style.display = "block";
-  document.body.classList.add("modal-open"); // bloquea scroll
+  document.body.classList.add("modal-open");
 }
 
 // Cerrar modal
 function closeModal() {
   modal.style.display = "none";
-  document.body.classList.remove("modal-open"); // habilita scroll
+  document.body.classList.remove("modal-open");
 }
 
 closeBtn.onclick = closeModal;
@@ -36,20 +26,34 @@ window.onclick = function (event) {
   }
 };
 
-const toggleDarkMode = document.getElementById("dark-mode-toggle");
-console.log(toggleDarkMode);
+function initDarkMode() {
+  const toggleDarkMode = document.getElementById("dark-mode-toggle");
+  console.log("🌙 Toggle encontrado:", toggleDarkMode);
 
-if (toggleDarkMode) {
+  if (!toggleDarkMode) {
+    console.error("❌ No se encontró el botón toggle");
+    return;
+  }
+  
   toggleDarkMode.addEventListener("click", (e) => {
-    e.preventDefault(); // evita salto
+    e.preventDefault();
     document.body.classList.toggle("dark-mode");
-    console.log("🌙 Modo oscuro activado");
+
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("theme", "dark");
+    } else {
+      localStorage.setItem("theme", "light");
+    }
   });
+
+  // Cargar preferencia
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+  }
+
+  console.log("✅ Toggle Dark Mode inicializado");
 }
 
-// Cargar preferencia guardada
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark-mode");
-}
+initDarkMode();
 
 
