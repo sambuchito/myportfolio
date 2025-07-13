@@ -8,6 +8,7 @@
   text-align: center;
   margin-bottom: var(--bottom-margin-2);
   background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 .contact-form-wrapper {

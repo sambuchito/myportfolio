@@ -28,6 +28,7 @@ window.onclick = function (event) {
 
 function initDarkMode() {
   const toggleDarkMode = document.getElementById("dark-mode-toggle");
+  const heroImg = document.querySelector(".hero-img");
   console.log("🌙 Toggle encontrado:", toggleDarkMode);
 
   if (!toggleDarkMode) {
@@ -40,8 +41,10 @@ function initDarkMode() {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
+      heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
       localStorage.setItem("theme", "dark");
     } else {
+      heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
       localStorage.setItem("theme", "light");
     }
   });
@@ -49,6 +52,9 @@ function initDarkMode() {
   // Cargar preferencia
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
+    heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
+  } else {
+    heroImg.src = "./ALL/IMG/cara-mia-new.webp";
   }
 
   console.log("✅ Toggle Dark Mode inicializado");
