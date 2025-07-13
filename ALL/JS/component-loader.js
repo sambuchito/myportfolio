@@ -24,7 +24,7 @@ function loadComponent(id, htmlUrl, jsUrl) {
 loadComponent("navigation-component", "./ALL/COMPONENTS/navigation.html");
 loadComponent("hero-component", "./ALL/COMPONENTS/hero.html");
 loadComponent("more-about-component", "./ALL/COMPONENTS/more-about.html");
-loadComponent("projects-component", "./ALL/COMPONENTS/projects.html", "./ALL/JS/modal.js");
+loadComponent("projects-component", "./ALL/COMPONENTS/projects.html", "./ALL/JS/modal-project.js");
 loadComponent("skills-component", "./ALL/COMPONENTS/skills.html", "./ALL/JS/modal-skills.js");
 
 loadComponent("contact-component", "./ALL/COMPONENTS/contact.html");
@@ -37,7 +37,8 @@ loadComponent(
     initDarkMode();
   }
 );
-loadComponent("modal-component", "./ALL/COMPONENTS/modal.html", "./ALL/JS/modal.js");
+loadComponent("modal-component", "./ALL/COMPONENTS/modal-project.html", "./ALL/JS/modal-project.js");
+loadComponent("modal-skills-component", "./ALL/COMPONENTS/modal-skills.html", "./ALL/JS/modal-skills.js");
 loadComponent(
   "modal-skills-component",
   "./ALL/COMPONENTS/modal-skills.html",
@@ -47,7 +48,8 @@ loadComponent(
 
 loadComponent(
   "modal-projects-component",
-  "./ALL/COMPONENTS/modal.html",
+  "./ALL/COMPONENTS/modal-project.html",
+  "./ALL/JS/modal-project.js",
   initModalProjects
 );
 
