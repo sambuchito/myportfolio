@@ -26,6 +26,7 @@
   height: 42rem;
   width: 42rem;  
   background-color: var(--background-color);
+  transition: opacity 0.4s ease;
 }
 
 .bio {
@@ -37,6 +38,7 @@
   background-color: var(--background-color);
   color: var(--primary-color);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease;
 }
 
 .bio-title {

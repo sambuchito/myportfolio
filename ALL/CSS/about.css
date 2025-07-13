@@ -2,24 +2,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 70rem;
-  margin: 3rem auto;
-  padding: 2rem;
+  max-width: 60rem;
+  margin: 1rem auto;
+  padding: 1rem;
   opacity: 0;
   background-color: var(--background-color);
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 7px 21px rgba(0, 0, 0, 0.08);
   transform: translateY(30px);
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
-  margin-bottom: 15rem;
-  margin-top: 12rem;
 }
 
 .more-about-content {
   width: 100%;
   max-width: 50rem;
-  margin: 0 auto;
+  margin: auto;
   padding: 0;
   border-radius: 0;
   background: #fff;
@@ -28,6 +26,7 @@
 }
 
 .more-about-title {
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: 700;

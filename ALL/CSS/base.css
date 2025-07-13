@@ -41,6 +41,55 @@ html {
   color: var(--primary-color);
 }
 
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color) ;
+  color: var(--primary-color);
+}
+
+body.dark-mode {
+  --background-color: #000000;
+  --primary-color: #ffffff;
+  --secondary-color: #ee1b0f;
+  --primary-shadow: #222222;
+  --secondary-shadow: #444444;
+}
+
+body.dark-mode .tagline {
+  color: var(--secondary-color);
+}
+
+body.dark-mode .hero-img {
+  opacity: 0.9;
+}
+
+body.dark-mode .project-card {
+  box-shadow: 0 0px 10px var(--secondary-color);
+}
+
+body.dark-mode .bio,
+body.dark-mode .more-about-section {
+  box-shadow: 0 0px 25px var(--primary-shadow);
+}
+
+body.dark-mode .contact-form-wrapper {
+  box-shadow: 0 0px 25px var(--secondary-color);
+}
+
+
+#more-about-component,
+#navigation-component,
+#hero-component,
+#projects-component,
+#skills-component,
+#contact-component,
+#footer-component,
+#modal-component,
+#modal-skills-component,
+#social-icons-component {  
+  background-color: var(--background-color);
+}
+
 /* Webkit (Chrome, Edge, Opera, Safari) */
 ::-webkit-scrollbar {
   width: 10px;
@@ -79,32 +128,6 @@ a:hover {
   color: var(--primary-color);
 }
 
-body {
-  font-family: var(--font-family);
-  background-color: var(--background-color) ;
-  color: var(--primary-color);
-}
-
-body.dark-mode {
-  --background-color: #000000;
-  --primary-color: #ffffff;
-  --secondary-color: #ee1b0f;
-  --primary-shadow: #222222;
-  --secondary-shadow: #444444;
-}
-
-#more-about-component,
-#navigation-component,
-#hero-component,
-#projects-component,
-#skills-component,
-#contact-component,
-#footer-component,
-#modal-component,
-#modal-skills-component,
-#social-icons-component {  
-  background-color: var(--background-color);
-}
 
 .close-btn {
   float: right;

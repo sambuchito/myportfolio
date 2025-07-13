@@ -1,10 +1,8 @@
-// Obtener referencias
 const modal = document.getElementById("modal");
 const modalTitle = document.getElementById("modal-title");
 const modalBody = document.getElementById("modal-body");
 const closeBtn = document.querySelector(".close-btn");
 
-// Abrir modal con datos dinámicos
 function openModal(title, content) {
   modalTitle.textContent = title;
   modalBody.innerHTML = content;
@@ -12,7 +10,6 @@ function openModal(title, content) {
   document.body.classList.add("modal-open");
 }
 
-// Cerrar modal
 function closeModal() {
   modal.style.display = "none";
   document.body.classList.remove("modal-open");
@@ -29,37 +26,34 @@ window.onclick = function (event) {
 function initDarkMode() {
   const toggleDarkMode = document.getElementById("dark-mode-toggle");
   const heroImg = document.querySelector(".hero-img");
-  console.log("🌙 Toggle encontrado:", toggleDarkMode);
 
   if (!toggleDarkMode) {
     console.error("❌ No se encontró el botón toggle");
     return;
   }
-  
-  toggleDarkMode.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.body.classList.toggle("dark-mode");
 
-    if (document.body.classList.contains("dark-mode")) {
-      heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
-      localStorage.setItem("theme", "dark");
-    } else {
-      heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
-      localStorage.setItem("theme", "light");
-    }
-  });
+  const newToggle = toggleDarkMode.cloneNode(true);
+  toggleDarkMode.parentNode.replaceChild(newToggle, toggleDarkMode);
 
-  // Cargar preferencia
   if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
     heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
   } else {
+    document.body.classList.remove("dark-mode");
     heroImg.src = "./ALL/IMG/cara-mia-new.webp";
   }
 
-  console.log("✅ Toggle Dark Mode inicializado");
+  newToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const isDark = document.body.classList.toggle("dark-mode");
+
+    if (isDark) {
+      heroImg.src = "./ALL/IMG/cara-mia-new-white.webp";
+      localStorage.setItem("theme", "dark");
+    } else {
+      heroImg.src = "./ALL/IMG/cara-mia-new.webp";
+      localStorage.setItem("theme", "light");
+    }
+  });
 }
-
-initDarkMode();
-
 

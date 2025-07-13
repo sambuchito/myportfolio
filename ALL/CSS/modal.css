@@ -24,7 +24,8 @@
 }
 
 .modal-projects__content {
-  background-color: #fff;
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin: 8% auto;
   padding: 2rem;
   border-radius: 10px;
@@ -47,6 +48,7 @@
 }
 
 .modal-projects__header {
+  background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,11 +57,14 @@
 }
 
 .modal-projects__header h2 {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin: 0;
   font-size: 1.5rem;
 }
 
 .modal-projects__close-btn {
+  background-color: var(--background-color);
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -70,17 +75,43 @@
   color: #333;
 }
 
+.modal-projects__body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
 .modal-projects__body p {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin: 0.5rem 0;
 }
 
-.modal-projects__description ul {
-  padding-left: 1.2rem;
-  list-style: disc;
+
+.modal-projects__description {
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 .modal-projects__tools {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin-top: 1rem;
   font-style: italic;
-  color: #555;
 }
+
+.modal-projects__body span {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.modal-projects__body strong {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode .modal-projects {
+  background-color: rgba(20, 20, 20, 0.8);  
+  box-shadow: 0 3px 10px var(--primary-shadow);
+}
+
+
