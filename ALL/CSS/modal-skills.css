@@ -7,7 +7,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--background-color);
+  background-color: rgba(0, 0, 0, 0.6);
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .modal-skills__content {
-  background-color: #fff;
+  background-color: var(--background-color);
   margin: 8% auto;
   padding: 2rem;
   border-radius: 10px;
@@ -45,6 +45,7 @@
 }
 
 .modal-skills__header {
+  background-color: var(--background-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,11 +54,14 @@
 }
 
 .modal-skills__header h2 {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin: 0;
   font-size: 1.5rem;
 }
 
 .modal-skills__close-btn {
+  background-color: var(--background-color);
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -68,19 +72,32 @@
   color: #333;
 }
 
+.modal-skills__body {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.modal-skills__body span {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
 .modal-skills__body p {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin: 0.5rem 0;
 }
 
-.modal-skills__description ul {
-  padding-left: 1.2rem;
-  list-style: disc;
-}
-
 .modal-skills__tools {
+  background-color: var(--background-color);
+  color: var(--primary-color);
   margin-top: 1rem;
   font-style: italic;
-  color: #555;
+}
+
+.modal-skills__description {
+  background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 /* Animations */
@@ -100,4 +117,14 @@
   to {
     opacity: 0;
   }
+}
+
+.modal-skills__body strong {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode .modal-skills {
+  background-color: rgba(20, 20, 20, 0.8);  
+  box-shadow: 0 3px 10px var(--primary-shadow);
 }
