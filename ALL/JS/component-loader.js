@@ -37,6 +37,14 @@ loadComponent(
     initDarkMode();
   }
 );
+loadComponent(
+  "social-icons-component",
+  "./ALL/COMPONENTS/social-icons.html",
+  () => {
+    console.log("🔄 Social Icons cargado, inicializando Dark Mode...");
+    initSocialIconsObserver();
+  }
+);
 loadComponent("modal-component", "./ALL/COMPONENTS/modal-project.html", "./ALL/JS/modal-project.js");
 loadComponent("modal-skills-component", "./ALL/COMPONENTS/modal-skills.html", "./ALL/JS/modal-skills.js");
 loadComponent(

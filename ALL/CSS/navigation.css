@@ -33,6 +33,7 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   background-color: var(--background-color);
+  margin-left: 4.2rem;
 }
 
 .header-title {
@@ -64,10 +65,27 @@ nav ul.navigation {
   gap: 1.9rem;
   background-color: var(--background-color);
   text-decoration: var(--bold-font);
+  list-style: none;
+  margin-right: 4.2rem;
 }
 
 nav ul.navigation li {
   font-weight: var(--bold-font);
+}
+
+.hamburger {
+  display: none; /* Oculta en escritorio */
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-left: auto;
+  bottom: 0.1rem;
+}
+
+.hamburger:focus {
+  outline: 2px solid var(--secondary-color);
 }
 
 .tagline {
@@ -81,4 +99,78 @@ nav ul.navigation li {
 
 body.dark-mode nav {
   box-shadow: 0 0px 15px var(--secondary-shadow);
+}
+
+
+@media (max-width: 768px) {
+.hamburger {
+    display: block;
+  }
+
+  nav {
+    padding: 1rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-title-group {
+    align-items: flex-start;
+    margin-bottom: 0.1rem;
+    margin-left: 1.5rem;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+  }
+
+  .tagline {
+    font-size: 0.5rem;
+  }
+
+  nav ul.navigation {
+    display: none;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 200rem;
+    background-color: var(--background-color);
+    position: absolute;
+    top: 0.1rem;
+    align-items: center;
+    padding: 1rem 0;
+    right: 1rem;
+  }
+
+  nav ul.navigation li {
+    font-size: 0.95rem;
+  }
+nav ul.navigation.show {
+    display: flex; /* Muestra links al activar */
+  }
+}
+
+body.dark-mode .hamburger {
+  color: var(--primary-color);
+}
+
+body.dark-mode nav ul.navigation {
+  background-color: #111;
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .header-title {
+    font-size: 1.2rem;
+  }
+
+  nav ul.navigation {
+    gap: 0.5rem;
+  }
+
+  nav ul.navigation li {
+    font-size: 0.9rem;
+  }
 }

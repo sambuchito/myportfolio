@@ -65,5 +65,10 @@
 
   .more-about-content {
     max-width: 100%;
+    padding: 1.5rem;
+  }
+
+  .more-about-text {
+    font-size: 0.9rem;
   }
 }
