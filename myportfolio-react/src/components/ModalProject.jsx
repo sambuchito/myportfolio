@@ -1,15 +1,28 @@
+import { useEffect, useState } from "react";
 import '../assets/css/base.css';
 import "../assets/css/modal-project.css";
 
 export default function ModalProjects({ isOpen, onClose, data }) {
-  if (!isOpen) return null;
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setVisible(true);
+    } else {
+      const timer = setTimeout(() => setVisible(false), 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
+  if (!visible) return null;
 
   return (
     <section
       className={`modal-projects ${isOpen ? "modal-projects--show" : "modal-projects--hide"}`}
+      onClick={onClose}
       id="modal-projects"
     >
-      <div className="modal-projects__content">
+      <div className="modal-projects__content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-projects__header">
           <h2>{data.company}</h2>
           <span
@@ -33,7 +46,7 @@ export default function ModalProjects({ isOpen, onClose, data }) {
             {data.description}
           </div>
           <div className="modal-projects__tools">
-            {data.tools &&
+            <strong>Skills:</strong> {data.tools &&
               data.tools.map((tool, index) => (
                 <span key={index} className="tool-item">
                   {tool}

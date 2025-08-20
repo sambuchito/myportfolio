@@ -1,6 +1,7 @@
 
 import '../assets/css/base.css';
 import '../assets/css/project.css';
+import '../assets/css/modal-project.css';
 import bugIcon from '../assets/ico/bug-2.svg';
 import devIcon from '../assets/ico/development-web-development-svgrepo-com.svg';
 import movieIcon from '../assets/ico/movie-film-flim-svgrepo-com.svg';
@@ -16,7 +17,7 @@ export default function Projects({ onOpenModal }) {
 
   return (
     <section className="projects" id="projects">
-      <h2 className="projects-title" id="project">
+      <h2 className="projects-title">
         Some of my recent work experience
       </h2>
 
@@ -52,7 +53,7 @@ export default function Projects({ onOpenModal }) {
                     <p>Collaborated with QA peers to maintain high testing standards and ensure thorough coverage of each release cycle.</p>
                   </>
                 ),
-                tools: ['JIRA', 'Trello', 'Postman', 'Excel', 'Word']
+                tools: ['JIRA. ', 'Trello. ', 'Postman. ', 'Excel. ', 'Word.']
               })
             }}
           >
@@ -88,7 +89,8 @@ export default function Projects({ onOpenModal }) {
                     <p>Built using HTML5, CSS3, and JavaScript for layout and interactivity.</p>
                     <p>Website link: <a href="https://sonorapodcast.uy" target="_blank" rel="noopener noreferrer">sonorapodcast.uy</a></p>
                   </>
-                )
+                ),
+                tools: ['HTML5. ', 'CSS3. ', 'JavaScript. ', 'cPanel. ', 'Mail configuration.']
               })
             }
           >
@@ -126,7 +128,7 @@ export default function Projects({ onOpenModal }) {
                     <p>Delegated tasks effectively while maintaining team focus under pressure.</p>
                   </>
                 ),
-                tools: ['Multitasking', 'Conflict resolution', 'Team collaboration', 'Adaptability', 'Patience']
+                tools: ['Multitasking. ', 'Conflict resolution. ', 'Team collaboration. ', 'Adaptability. ', 'Patience.']
               })
             }
           >

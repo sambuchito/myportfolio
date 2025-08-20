@@ -1,12 +1,27 @@
-import '../assets/css/base.css';
+import { useEffect, useState } from "react";
+import useDarkMode from "../hooks/useDarkMode";
+
+import heroLight from "../assets/img/cara-mia-new.webp";
+import heroDark from "../assets/img/cara-mia-new-white.webp";
 import "../assets/css/hero.css";
-import heroImage from '../assets/img/cara-mia-new.webp';
 
 
 export default function Hero() {
+  const { isDark } = useDarkMode();
+  const [heroImg, setHeroImg] = useState(heroLight);
+
+  useEffect(() => {
+    setHeroImg(isDark ? heroDark : heroLight);
+  }, [isDark]);
+
   return (
-<section className="hero" id="about">
-      <img src={heroImage} alt="lu-by-tity" loading="lazy" className="hero-img" />
+  <section className="hero" id="about">
+      <img 
+      src={heroImg} 
+      alt="lu-by-tity" 
+      loading="lazy" 
+      className="hero-img" 
+      />
 
       <div className="bio">
         <h2 className="bio-title" id="bio-title">Hello</h2>

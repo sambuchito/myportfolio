@@ -43,7 +43,7 @@ html {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color) ;
+  background-color: var(--background-color);
   color: var(--primary-color);
 }
 
@@ -58,8 +58,10 @@ body.dark-mode {
 body.dark-mode .tagline {
   color: var(--secondary-color);
 }
-
+body.dark-mode #about,
 body.dark-mode .hero-img {
+  background-color: #000000;
+  color: var(--primary-color);
   opacity: 0.9;
 }
 
@@ -69,16 +71,18 @@ body.dark-mode .project-card {
 
 body.dark-mode .bio,
 body.dark-mode .more-about-section {
+  background-color: var(--background-color);
   box-shadow: 0 0px 25px var(--primary-shadow);
 }
+
 
 body.dark-mode .contact-form-wrapper {
   box-shadow: 0 0px 25px var(--secondary-color);
 }
 
 
-#more-about-component,
-#navigation-component,
+#about,
+#more-about,
 #hero-component,
 #projects-component,
 #skills-component,

@@ -1,5 +1,6 @@
 import '../assets/css/base.css';
 import '../assets/css/skills.css';
+import '../assets/css/modal-skills.css';
 
 import htmlIcon from '../assets/ico/html5-logo.svg';
 import basketIcon from '../assets/ico/basketball.svg';
@@ -40,7 +41,7 @@ export default function Skills({ onOpenModal }) {
                   <p>Design Thinking workshop.</p>
                   <p>Testing I.</p>
                 `,
-                tools: ['Backend', 'UML', 'Workbench', 'OOP', 'Figma', 'JavaScript'],
+                tools: ['Backend. ', 'UML. ', 'Workbench. ', 'OOP. ', 'Figma. ', 'JavaScript. '],
               })
             }
           />
@@ -65,7 +66,7 @@ export default function Skills({ onOpenModal }) {
                   <p>Navigation optimization, browsing by location, type, date, and time.</p>
                   <p>Optimized reservation process, using core components such as Booking Forms and Calendar to manage reservation data and access validation.</p>
                 `,
-                tools: ['Backend', 'Scrum', 'Vite', 'React', 'Java'],
+                tools: ['Backend. ', 'Scrum. ', 'Vite. ', 'React. ', 'Java. '],
               })
             }
           />
@@ -89,7 +90,7 @@ export default function Skills({ onOpenModal }) {
                   <p>Connecting to MongoDB using Mongoose, including data modeling and querying.</p>
                   <p>Use of tools like Postman for API testing.</p>
                 `,
-                tools: ['Flexbox', 'HTML5', 'React', 'JavaScript', 'Node Js'],
+                tools: ['Flexbox. ', 'HTML5. ', 'React. ', 'JavaScript. ', 'Node Js. '],
               })
             }
           />
@@ -116,7 +117,7 @@ export default function Skills({ onOpenModal }) {
                   <p>Incident management.</p>
                   <p>Documentation and reporting.</p>
                 `,
-                tools: ['Selenium', 'Scrum', 'Postman', 'MySQL', 'Mantis'],
+                tools: ['Selenium. ', 'Scrum. ', 'Postman. ', 'MySQL. ', 'Mantis. '],
               })
             }
           />
@@ -136,7 +137,7 @@ export default function Skills({ onOpenModal }) {
                   <p>This one is a work in progress, but rest assured I will keep posted about this.</p>
                   <p>Se vienen cositas.</p>
                 `,
-                tools: ['Adobe Premiere Pro', 'After Effects', 'Adobe Audition', 'Canva'],
+                tools: ['Adobe Premiere Pro. ', 'After Effects. ', 'Adobe Audition. ', 'Canva. '],
               })
             }
           />
@@ -160,7 +161,7 @@ export default function Skills({ onOpenModal }) {
                   <p>Soft skills.</p>
                   <p>Implementation of user authentication and authorization using JWT, along with data validation and sanitization.</p>
                 `,
-                tools: ['HTML', 'CSS', 'APIs', 'VSCode', 'Node Js'],
+                tools: ['HTML. ', 'CSS. ', 'APIs. ', 'VSCode. ', 'Node Js. '],
               })
             }
           />

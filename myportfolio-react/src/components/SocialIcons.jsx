@@ -1,25 +1,37 @@
 import '../assets/css/base.css';
 import '../assets/css/socials.css';
 
-import skinIcon from '../assets/ico/costado-red-1443-svgrepo-com.svg';
+import useDarkMode from '../hooks/useDarkMode';
+
+import skinIcon from '../assets/ico/skinIcon.svg';
 import linkedinIcon from '../assets/ico/linkedin.svg';
-import githubIcon from '../assets/ico/costado-github-142-svgrepo-com.svg';
+import githubIcon from '../assets/ico/githubIcon.svg';
 import upIcon from '../assets/ico/up.svg';
 
 export default function SocialIcons() {
+  const { isDark, toggleDarkMode } = useDarkMode();
 
   return (
   <section className="social-icons" id="social-icons">
-  <a href="javascript:void(0);" id="dark-mode-toggle" title="change-it">
+  <a 
+  onClick={toggleDarkMode} 
+  className="social-icon-btn" 
+  id="dark-mode-toggle" 
+  title="change-it"
+  >
     <img
       src={skinIcon}
       alt="Toggle Dark Mode"
       loading="lazy"
       className="social-icon"
-      onclick="initDarkMode()"
     />
+    {isDark ? "" : ""}
   </a>
-  <a href="https://www.linkedin.com/in/luciana-rossi-figueroa/" title="get-in" target="_blank">
+  <a href="https://www.linkedin.com/in/luciana-rossi-figueroa/" 
+  title="get-in" 
+  target="_blank"
+  rel="noreferrer"
+  >
     <img
       src={linkedinIcon}
       alt="LinkedIn"
@@ -27,7 +39,11 @@ export default function SocialIcons() {
       className="social-icon"
     />
   </a>
-  <a href="https://github.com/sambuchito" title="git-in" target="_blank">
+  <a href="https://github.com/sambuchito" 
+  title="git-in" 
+  target="_blank"
+  rel="noreferrer"
+  >
     <img
       src={githubIcon}
       alt="Github"

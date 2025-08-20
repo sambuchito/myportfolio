@@ -7,6 +7,7 @@
   padding: 1rem;
   opacity: 0;
   background-color: var(--background-color);
+  color: var(--primary-color);
   border-radius: 10px;
   box-shadow: 0 7px 21px rgba(0, 0, 0, 0.08);
   transform: translateY(30px);

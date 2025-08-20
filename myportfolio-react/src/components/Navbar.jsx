@@ -1,7 +1,6 @@
-import '../assets/css/base.css';
-import "../assets/css/navigation.css";
+import { Link } from "react-router-dom";
 
- export default function Navbar() {
+export default function Navbar() {
   return (
     <nav className="nav" id="nav">
       <div className="nav-title-group">
@@ -16,6 +15,7 @@ import "../assets/css/navigation.css";
         <li><a href="#projects" className="nav-link">Projects</a></li>
         <li><a href="#skills" className="nav-link">Skills</a></li>
         <li><a href="#contact-me" className="nav-link">Contact</a></li>
+        <li><Link to="/FunFacts" className="nav-link">Fun Facts</Link></li>
       </ul>
     </nav>
   );

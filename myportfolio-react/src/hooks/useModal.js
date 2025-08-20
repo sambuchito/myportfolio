@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "../assets/css/modal-project.css";
+import "../assets/css/modal-skills.css";
 
 export default function useModal() {
   const [isOpen, setIsOpen] = useState(false);

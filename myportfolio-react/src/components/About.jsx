@@ -1,7 +1,10 @@
 import '../assets/css/base.css';
 import "../assets/css/about.css";
+import useDarkMode from "../hooks/useDarkMode";
 
 export default function About() {
+  useDarkMode();
+  
   return (
   <section className="more-about-section" id="more-about">
       <div className="more-about-content">
