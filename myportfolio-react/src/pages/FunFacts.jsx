@@ -1,39 +1,44 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import "../assets/css/base.css"
+import "../assets/css/funfacts.css";
 
 export default function FunFacts() {
   const [fact, setFact] = useState("");
-  const [image, setImage] = useState("");
-  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    if (!isLoggedIn) {
-      navigate("/login");
-    }
-  }, [navigate]);
-
-  const fetchAnimal = async () => {
+  const fetchFact = async () => {
     try {
-      const res = await fetch("https://some-animal-api.com/random");
+      setIsLoading(true);
+      const res = await fetch(
+        "https://cat-fact.herokuapp.com/facts/random?animal_type=cat&amount=1"
+      );
       const data = await res.json();
-      setFact(data.fact);
-      setImage(data.image);
+      // Si viene como array o objeto
+      const text = Array.isArray(data) ? data[0]?.text : data?.text;
+      setFact(text || "No se encontró dato 😉");
     } catch (error) {
-      console.log("Error al obtener el animal:", error);
+      console.error(error);
+      setFact("Error al obtener el dato");
+    } finally {
+      setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchAnimal();
+    fetchFact();
   }, []);
 
   return (
-    <div className="funfacts">
-      <h1>Datos Curiosos de Animales</h1>
-      <img src={image} alt="animal" style={{ maxWidth: "300px" }} />
-      <p>{fact}</p>
-      <button onClick={fetchAnimal}>Otro animal</button>
+    <div className="funfacts-container">
+      <h1 className="funfacts-title">Fun Facts about Cats</h1>
+      {isLoading ? (
+        <p className="funfact-loading">Loading...</p>
+      ) : (
+        <div className="funfact-card">{fact}</div>
+      )}
+      <button className="funfact-button" onClick={fetchFact}>
+        Another Fact
+      </button>
     </div>
   );
 }
