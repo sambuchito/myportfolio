@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import "../assets/css/base.css";
+import "../assets/css/navigation.css";
 
 export default function Navbar() {
   return (

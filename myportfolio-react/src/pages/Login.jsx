@@ -1,26 +1,43 @@
 import '../assets/css/base.css';
 import '../assets/css/login.css';
 
-
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { useNavigate, useLocation } from "react-router-dom";
+//import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
-  const { login } = useAuth();
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({ username: "", password: "", });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/FunFacts";
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = login(username, password);
-    if (success) {
-      navigate("/funfacts");
-    } else {
-      setError("Invalid credentials. Try again.");
-    }
+    setIsLoading(true);
+    setError("");
+
+    // Simulación de login
+    setTimeout(() => {
+      if (formData.email === "admin@mail.com" && formData.password === "1234") {
+        alert("¡Login exitoso!");
+        localStorage.setItem("isLoggedIn", "true");
+        localStorage.setItem("username", formData.email);
+        navigate(from, { replace: true });
+      } else {
+        setError("Usuario o contraseña incorrectos");
+      }
+      setIsLoading(false);
+    }, 1000);
   };
 
   return (
@@ -60,13 +77,11 @@ export default function Login() {
           />
         </div>
 
-        {isLoading ? (
-          <LoadingSpinner />
-        ) : (
+        {isLoading ? <p>Cargando...</p> : 
           <button type="submit" className="login-button">
             Iniciar Sesión 🚀
           </button>
-        )}
+        }
       </form>
     </div>
   </div>
