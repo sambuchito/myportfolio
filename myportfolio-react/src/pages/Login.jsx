@@ -1,8 +1,10 @@
 import '../assets/css/base.css';
 import '../assets/css/login.css';
+import '../assets/css/socials.css'
 
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import SocialIcons from '../components/SocialIcons';
 //import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
@@ -51,9 +53,10 @@ export default function Login() {
       <form className="login-form" onSubmit={handleSubmit}>
         {error && <p className="login-error">{error}</p>}
 
-        <div>
+        <div className="form-input">
           <label htmlFor="email">Email</label>
           <input
+            className='form-input'
             type="email"
             id="email"
             name="email"
@@ -64,7 +67,7 @@ export default function Login() {
           />
         </div>
 
-        <div>
+        <div className="form-input">
           <label htmlFor="password">Contraseña</label>
           <input
             type="password"
@@ -83,7 +86,9 @@ export default function Login() {
           </button>
         }
       </form>
+      
     </div>
+    <SocialIcons />
   </div>
 );
 
