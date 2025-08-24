@@ -1,13 +1,23 @@
-import { useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { SkinContext } from "../context/SkinContext";
+//import useDarkMode from "../hooks/useDarkMode";
 import "../assets/css/base.css"
 import "../assets/css/funfacts.css";
 import SocialIcons from "../components/SocialIcons";
-import horseBack from '../assets/img/horse-back.svg';
+import horseLight from '../assets/img/horse2.svg';
+import horseDark from "../assets/img/horse.svg"
 
 export default function FunFacts() {
+  //const { isDark } = useDarkMode();
+  const { isDark } = useContext(SkinContext);
+ // const [fuctsImg, setFuctsImg] = useState(isDark ? horseDark : horseLight);
   const [fact, setFact] = useState("");
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+
+  /* useEffect(() => {
+    setFuctsImg(isDark ? horseDark : horseLight);
+  }, [isDark]); */
 
   const fetchFactAndImg = async () => {
     try {
@@ -56,7 +66,7 @@ export default function FunFacts() {
       </button>
     </div>
     <img 
-      src={horseBack} 
+      src={isDark ? horseDark : horseLight} 
       alt="" 
       loading="lazy" 
       className="fun-back-img" 

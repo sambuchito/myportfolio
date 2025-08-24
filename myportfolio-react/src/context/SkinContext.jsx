@@ -1,8 +1,8 @@
 import { createContext, useState, useEffect } from "react";
 
-export const ThemeContext = createContext();
+export const SkinContext = createContext();
 
-export function ThemeProvider({ children }) {
+export function SkinProvider({ children }) {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
@@ -13,8 +13,8 @@ export function ThemeProvider({ children }) {
   }, [darkMode]);
 
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <SkinContext.Provider value={{ darkMode, setDarkMode }}>
       {children}
-    </ThemeContext.Provider>
+    </SkinContext.Provider>
   );
 }

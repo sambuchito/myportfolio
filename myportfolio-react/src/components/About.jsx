@@ -1,12 +1,15 @@
 import '../assets/css/base.css';
 import "../assets/css/about.css";
-import useDarkMode from "../hooks/useDarkMode";
+//import useDarkMode from "../hooks/useDarkMode";
+import { useContext } from "react";
+import { SkinContext } from '../context/SkinContext';
 
 export default function About() {
-  useDarkMode();
+  const { isDark } = useContext(SkinContext);
+  
   
   return (
-  <section className="more-about-section" id="more-about">
+  <section className={`more-about-section${isDark ? "dark" : ""}`} id="more-about">
       <div className="more-about-content">
         <h2 className="more-about-title" id="more-about-title">About Me</h2>
         <p className="more-about-text">

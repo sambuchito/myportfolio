@@ -103,6 +103,6 @@ section img {
   height: auto;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.9;
+  opacity: 1;
   background-color: var(--background-color);
 }

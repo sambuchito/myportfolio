@@ -1,13 +1,15 @@
-import { useEffect, useState } from "react";
-import useDarkMode from "../hooks/useDarkMode";
+import { useContext, useEffect, useState } from "react";
+//import useDarkMode from "../hooks/useDarkMode";
+import { SkinContext } from "../context/SkinContext";
 
 import heroLight from "../assets/img/cara-mia-new.webp";
 import heroDark from "../assets/img/cara-mia-new-white.webp";
+import "../assets/css/base.css"
 import "../assets/css/hero.css";
 
 
 export default function Hero() {
-  const { isDark } = useDarkMode();
+  const { isDark } = useContext(SkinContext);
   const [heroImg, setHeroImg] = useState(heroLight);
 
   useEffect(() => {
