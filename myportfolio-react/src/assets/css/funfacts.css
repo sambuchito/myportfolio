@@ -104,7 +104,7 @@ section img {
   left: 0;
   width: 26rem;
   height: auto;
-  z-index: 1;
+  z-index: -1;
   pointer-events: none;
   opacity: 1;
   background-color: var(--background-color);

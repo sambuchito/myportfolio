@@ -10,8 +10,8 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #fff;
-    color: #000000;    
+    background-color: var(--background-color);
+    color: var(--primary-color);    
 }
 
 nav {
@@ -40,6 +40,7 @@ nav {
   font-size: xx-large;
   font-weight: var(--bolder-font);
   background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 
@@ -62,7 +63,7 @@ nav a.nav-link:hover {
 
 nav ul.navigation {
   display: flex;
-  gap: 1.9rem;
+  gap: 1.7rem;
   background-color: var(--background-color);
   text-decoration: var(--bold-font);
   list-style: none;
@@ -93,7 +94,6 @@ nav ul.navigation li {
   font-weight: 500;
   font-style: italic;
   color: var(--primary-shadow);
-  margin-top: 0.4rem;
   background-color: var(--background-color);
 }
 
@@ -154,7 +154,7 @@ body.dark-mode .hamburger {
 }
 
 body.dark-mode nav ul.navigation {
-  background-color: #111;
+  background-color:var(--background-color);
 }
 
 @media (max-width: 480px) {
