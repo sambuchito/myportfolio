@@ -31,12 +31,12 @@ export default function Login() {
     // Simulación de login
     setTimeout(() => {
       if (formData.email === "admin@mail.com" && formData.password === "1234") {
-        alert("¡Login exitoso!");
+        alert("Success!");
         localStorage.setItem("isLoggedIn", "true");
         localStorage.setItem("username", formData.email);
         navigate(from, { replace: true });
       } else {
-        setError("Usuario o contraseña incorrectos");
+        setError("Invalid user or password");
       }
       setIsLoading(false);
     }, 1000);
@@ -46,8 +46,8 @@ export default function Login() {
   <div className="login-container">
     <div className="login-card">
       <div className="login-header">
-        <h2>Iniciar Sesión</h2>
-        <p>Bienvenido de nuevo</p>
+        <h2>Log in</h2>
+        <p>Welcome stranger</p>
       </div>
 
       <form className="login-form" onSubmit={handleSubmit}>
@@ -80,7 +80,7 @@ export default function Login() {
           />
         </div>
 
-        {isLoading ? <p>Cargando...</p> : 
+        {isLoading ? <p>Loading...</p> : 
           <button type="submit" className="login-button">
             Iniciar Sesión 🚀
           </button>

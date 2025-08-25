@@ -9,12 +9,12 @@ import "../assets/css/hero.css";
 
 
 export default function Hero() {
-  const { isDark } = useContext(SkinContext);
+  const { darkMode } = useContext(SkinContext);
   const [heroImg, setHeroImg] = useState(heroLight);
 
   useEffect(() => {
-    setHeroImg(isDark ? heroDark : heroLight);
-  }, [isDark]);
+    setHeroImg(darkMode ? heroDark : heroLight);
+  }, [darkMode]);
 
   return (
   <section className="hero" id="about">

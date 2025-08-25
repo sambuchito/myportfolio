@@ -1,10 +1,16 @@
 import '../assets/css/base.css';
 import "../assets/css/contact.css";
 
+import { useContext } from 'react';
+import { SkinContext } from '../context/SkinContext';
+
+
+
 export default function ContactForm() {
+  const { darkMode } = useContext(SkinContext);
 
   return (
-<section className="contact" id="contact-me">
+  <section className={`contact ${darkMode ? "dark" : ""}`} id="contact-me">
       <h2>About contacting me</h2>
       <div className="contact-form-wrapper">
         <div className="contact-form">

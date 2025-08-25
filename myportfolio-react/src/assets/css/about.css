@@ -21,9 +21,9 @@
   margin: auto;
   padding: 0;
   border-radius: 0;
-  background: #fff;
   box-shadow: none;
   background-color: var(--background-color);
+  color: var(--primary-color);
 }
 
 .more-about-title {

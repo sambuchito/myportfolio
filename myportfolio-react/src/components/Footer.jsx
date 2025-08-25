@@ -1,13 +1,16 @@
 import '../assets/css/base.css';
 import '../assets/css/socials.css';
+import { useContext } from 'react';
+import { SkinContext } from '../context/SkinContext';
 import horseIcon1 from '../assets/ico/horse-svgrepo-com.svg';
 import horseIcon2 from '../assets/ico/horse-face-svgrepo-com.svg';
 import horseIcon3 from '../assets/ico/horse-svgrepo-com-2.svg';
 
 export default function Footer() {
+  const { darkMode } = useContext(SkinContext);
     
     return (
-    <section className="footer-icons" id="footer-icons">
+    <section className={`footer-icons ${darkMode ? "dark" : ""}`} id="footer-icons">
     <footer className="page-footer">
       <p>Bye</p>      
         <div className="footer-icons-container">

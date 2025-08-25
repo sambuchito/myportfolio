@@ -4,31 +4,37 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const storedAuth = localStorage.getItem("isAuthenticated");
-    if (storedAuth === "true") {
+useEffect(() => {
+    const storedUser = localStorage.getItem("authUser");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
       setIsAuthenticated(true);
     }
+    setLoading(false);
   }, []);
 
   const login = (username, password) => {
-    // 🔹 aquí pondrías tu validación real
-    if (username === "admin" && password === "1234") {
-      setIsAuthenticated(true);
-      localStorage.setItem("isAuthenticated", "true");
-      return true;
-    }
-    return false;
-  };
+  if (username === "admin@mail.com" && password === "1234") {
+    const userData = { name: "Admin", email: username };
+    setUser(userData);
+    setIsAuthenticated(true);
+    localStorage.setItem("authUser", JSON.stringify(userData));
+    return true;
+  }
+  return false;
+};
 
-  const logout = () => {
-    setIsAuthenticated(false);
-    localStorage.removeItem("isAuthenticated");
-  };
+const logout = () => {
+  setUser(null);
+  setIsAuthenticated(false);
+  localStorage.removeItem("authUser");
+};
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ isAuthenticated, user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

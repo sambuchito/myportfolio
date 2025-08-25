@@ -12,9 +12,11 @@ import './assets/css/login.css';
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
+import { SkinProvider } from "./context/SkinProvider";
 import Login from "./pages/Login";
 import FunFacts from "./pages/FunFacts"; 
 import PrivateRoute from "./components/PrivateRoute";
+
 
 import useModal from "./hooks/useModal";
 import Navbar from './components/Navbar';
@@ -33,7 +35,7 @@ function App() {
 
 
   return (
-    
+    <SkinProvider>
       <AuthProvider>
         <BrowserRouter>
           <Navbar />
@@ -74,7 +76,7 @@ function App() {
       </Routes>
       </BrowserRouter>
       </AuthProvider>
-    
+    </SkinProvider>
   );
 }
 

@@ -1,22 +1,41 @@
 import '../assets/css/base.css';
 import '../assets/css/socials.css';
 
-//import useDarkMode from '../hooks/useDarkMode';
+import { useContext, useState } from 'react';
 import { SkinContext } from '../context/SkinContext';
+import { useAuth } from '../context/AuthContext';
+import ConfirmModal from './ModalLogout';
 
+import logoutIcon from '../assets/ico/orca2.svg';
 import skinIcon from '../assets/ico/skinIcon.svg';
 import linkedinIcon from '../assets/ico/linkedin.svg';
 import githubIcon from '../assets/ico/githubIcon.svg';
 import upIcon from '../assets/ico/up.svg';
-import { useContext } from 'react';
 
 export default function SocialIcons() {
-  const { isDark, setDarkMode } = useContext(SkinContext);
-
+  const { darkMode, setDarkMode } = useContext(SkinContext);
   const toggleDarkMode = () => setDarkMode(prev => !prev);
+  const { logout, isAuthenticated } = useAuth();
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const handleLogoutClick = () => {
+    setModalOpen(true);
+  };
+
+  const confirmLogout = () => {
+    logout();
+    setModalOpen(false);
+  };
 
   return (
-  <section className="social-icons" id="social-icons">
+    <>
+    <section className="social-icons" id="social-icons">
+      {isAuthenticated && (
+          <a onClick={handleLogoutClick} className="social-icon-btn" title="Cerrar sesión">
+            <img src={logoutIcon} alt="Cerrar sesión" className="social-icon" />
+          </a>
+        )}
   <a 
     onClick={toggleDarkMode} 
     className="social-icon-btn" 
@@ -29,7 +48,7 @@ export default function SocialIcons() {
       loading="lazy"
       className="social-icon"
     />
-    {isDark ? "" : ""}
+    {darkMode ? "" : ""}
   </a>
   <a href="https://www.linkedin.com/in/luciana-rossi-figueroa/" 
   title="get-in" 
@@ -63,5 +82,11 @@ export default function SocialIcons() {
     />
   </a>
 </section>
+<ConfirmModal
+        isOpen={isModalOpen}
+        onConfirm={confirmLogout}
+        onCancel={() => setModalOpen(false)}
+      />
+    </>
 );
 }
