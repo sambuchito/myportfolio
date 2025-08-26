@@ -13,7 +13,8 @@
 }
 
 .funfacts-title {
-  font-size: 2.5rem;
+  font: var(--font-family);
+  font-size: 42px;
   font-weight: var(--bolder-font);
   background-color: var(--background-color);
 }
@@ -58,6 +59,7 @@
 
 .funfact-button {
   padding: 0.75rem 1.5rem;
+  font: var(--font-family);
   font-size: 1rem;
   font-weight: var(--bold-font);
   color: var(--background-color);
@@ -91,7 +93,7 @@ h1 {
 }
 
 section img {
-  width: 250px;
+  width: 200px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -101,11 +103,24 @@ section img {
 .fun-back-img {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 26rem;
+  left: 26rem;
+  width: 10rem;
   height: auto;
-  z-index: -1;
+  z-index: 1;
   pointer-events: none;
   opacity: 1;
   background-color: var(--background-color);
+}
+
+.fun-back-img-2 {
+  position: fixed;
+  bottom: 0;
+  right: 26rem;
+  width: 10rem;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 1;
+  background-color: var(--background-color);
+  transform: rotateY(180deg);
 }

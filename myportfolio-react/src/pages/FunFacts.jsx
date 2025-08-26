@@ -8,6 +8,12 @@ import horseLight from '../assets/img/horse2.svg';
 
 export default function FunFacts() {
   const { darkMode } = useContext(SkinContext);
+  const [fuctImg, setFuctImg] = useState(horseLight);
+  
+  useEffect(() => {
+      setFuctImg(darkMode ? horseLight : horseDark);
+  }, [darkMode]);
+
   const [fact, setFact] = useState("");
   const [image, setImage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -54,10 +60,17 @@ export default function FunFacts() {
       </button>
     </div>
     <img 
-      src={darkMode ? horseDark : horseLight} 
+      src={fuctImg} 
       alt="" 
       loading="lazy" 
       className="fun-back-img" 
+      />
+
+      <img 
+      src={fuctImg} 
+      alt="" 
+      loading="lazy" 
+      className="fun-back-img-2" 
       />
       <SocialIcons />
     </section>
