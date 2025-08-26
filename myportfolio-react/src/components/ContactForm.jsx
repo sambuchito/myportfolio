@@ -1,20 +1,49 @@
 import '../assets/css/base.css';
 import "../assets/css/contact.css";
 
-import { useContext } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { SkinContext } from '../context/SkinContext';
+import emailjs from "emailjs-com";
 
 
 
 export default function ContactForm() {
   const { darkMode } = useContext(SkinContext);
+  const formRef = useRef();
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    setIsSending(true);
+    setStatusMessage("");
+
+    emailjs
+      .sendForm(
+        "service_vg62wp4",
+        "template_miiax7q",
+        formRef.current,
+        "OOoer30-cietTJqR9"
+      )
+      .then(
+        () => {
+          setStatusMessage("✅ Message sent successfully!");
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error(error);
+          setStatusMessage("❌ Failed to send message. Try again later.");
+        }
+      )
+      .finally(() => setIsSending(false));
+  };
 
   return (
   <section className={`contact ${darkMode ? "dark" : ""}`} id="contact-me">
       <h2>About contacting me</h2>
       <div className="contact-form-wrapper">
         <div className="contact-form">
-          <form action="" autocomplete="on" method="post">
+          <form ref={formRef} onSubmit={sendEmail} autocomplete="on">
             <div className="form-control">
               <label for="name">Name</label>
               <input
@@ -62,8 +91,9 @@ export default function ContactForm() {
               <input
               id="submit-btn"
               type="submit"
-              value="Send"
+              value={isSending ? "Sending..." : "Send"}
               className="submit-btn"
+              disabled={isSending}
               />
               <input
               id="reset-btn"
@@ -74,6 +104,7 @@ export default function ContactForm() {
               />
             </div>
           </form>
+          {statusMessage && <p className="status-message">{statusMessage}</p>}
         </div>
       </div>
     </section>

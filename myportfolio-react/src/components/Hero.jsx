@@ -41,7 +41,7 @@ export default function Hero() {
           I started this site as a way to bring my ideas, projects, and odd skills together in one place.
         </p>
         <p className="bio-text">
-          I hope you enjoy your stay and everything works as planned, and if not, please report!
+          I hope you enjoy your stay and everything works as planned, and if not, please report! Oh and I also love horsies.
         </p>
       </div>
     </section>

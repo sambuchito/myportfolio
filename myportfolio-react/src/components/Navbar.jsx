@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav className="nav" id="nav">
       <div className="nav-title-group">
-        <h1 className="header-title">Lu Rossi</h1>
+        <Link to="/" className="header-title">Lu Rossi</Link>
         <span className="tagline">QA Tester - Web Dev Learner - Orca Lover</span>
       </div>
       <button className="hamburger" id="hamburger-menu" aria-label="Toggle Menu">
