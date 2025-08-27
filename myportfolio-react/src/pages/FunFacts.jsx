@@ -51,7 +51,7 @@ export default function FunFacts() {
       {isLoading ? (
         <p className="funfact-loading">Loading...</p>
       ) : (
-        <div className="funfact-card">{image && <img src={image} alt="Gato aleatorio" className="funfacts-image" />}
+        <div className="funfact-card">{image && <img src={image} alt="random cat" className="funfacts-image" />}
         <p className="funfacts-text">{fact}</p>
         </div>
       )}

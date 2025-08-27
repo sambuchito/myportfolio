@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from "react";
-//import useDarkMode from "../hooks/useDarkMode";
 import { SkinContext } from "../context/SkinContext";
 
 import heroLight from "../assets/img/cara-mia-new.webp";

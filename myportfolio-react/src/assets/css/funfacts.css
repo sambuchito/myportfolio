@@ -92,13 +92,13 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-section img {
+/* section img {
   width: 200px;
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
   background-color: var(--background-color);
-}
+} */
 
 .fun-back-img {
   position: fixed;
@@ -106,10 +106,10 @@ section img {
   left: 26rem;
   width: 10rem;
   height: auto;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   opacity: 1;
-  background-color: var(--background-color);
+  background-color: transparent;
 }
 
 .fun-back-img-2 {
@@ -118,9 +118,109 @@ section img {
   right: 26rem;
   width: 10rem;
   height: auto;
-  z-index: 1;
+  z-index: 0;
   pointer-events: none;
   opacity: 1;
-  background-color: var(--background-color);
+  background-color: transparent;
   transform: rotateY(180deg);
 }
+
+@media (max-width: 1024px) {
+  .funfacts-container {
+    padding: 3rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .funfacts-title {
+    font-size: 36px;
+  }
+
+  .funfact-card {
+    max-width: 500px;
+    padding: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .funfact-button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .fun-back-img {
+    width: 12rem;
+    left: 15rem;
+  }
+
+  .fun-back-img-2 {
+    width: 12rem;
+    right: 15rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .funfacts-container {
+    padding: 2rem 1rem;
+    gap: 1rem;
+  }
+
+  .funfacts-title {
+    font-size: 28px;
+  }
+
+  .funfact-card {
+    max-width: 90%;
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+
+  .funfact-button {
+    width: 80%;
+    max-width: 220px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+  }
+
+  .fun-back-img {
+    position: fixed;
+    display: block;
+    left: 12rem;
+    margin-top: 1.2rem;
+    width: 7rem;
+  }
+
+  .fun-back-img-2 {
+    position: fixed;
+    display: block;
+    right: 12rem;
+    margin-top: 1.2rem;
+    width: 7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .funfacts-title {
+    font-size: 22px;
+  }
+
+  .funfact-card {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .funfact-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .fun-back-img {
+    width: 6rem;
+    margin-right: 15rem 0;
+  }
+
+  .fun-back-img-2 {
+    width: 6rem;
+    margin-left: 15rem;
+  }
+}
+
+
