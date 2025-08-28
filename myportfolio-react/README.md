@@ -4,7 +4,7 @@ MyPortfolio es mi CV digital interactivo, desarrollado con HTML, CSS y JavaScrip
 
 🌐 Demo en vivo
 
-https://sambuchito.github.io/portfolio/
+https://sambuchito.github.io/myportfolio/
 
 🛠 Tecnologías
 
