@@ -43,7 +43,7 @@ export default function ContactForm() {
       <h2>About contacting me</h2>
       <div className="contact-form-wrapper">
         <div className="contact-form">
-          <form ref={formRef} onSubmit={sendEmail} autocomplete="on">
+          <form ref={formRef} onSubmit={sendEmail} autoComplete="on">
             <div className="form-control">
               <label for="name">Name</label>
               <input
