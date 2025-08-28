@@ -74,6 +74,20 @@ nav ul.navigation li {
   font-weight: var(--bold-font);
 }
 
+.nav-user {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.logout-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+
 .hamburger {
   display: none; /* Oculta en escritorio */
   font-size: 2rem;

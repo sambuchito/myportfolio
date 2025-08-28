@@ -1,11 +1,12 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .modal-container {
@@ -25,6 +26,7 @@
 
 .btn-cancel,
 .btn-confirm {
+  font-family: var(--font-family);
   padding: 8px 12px;
   border: none;
   cursor: pointer;

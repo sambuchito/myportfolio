@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
+import { useAuth } from "../context/Authcontext"
 import "../assets/css/base.css";
 import "../assets/css/navigation.css";
 
 export default function Navbar() {
+  const { isAuthenticated, user, logout } = useAuth();
+
   return (
     <nav className="nav" id="nav">
       <div className="nav-title-group">
@@ -18,6 +21,8 @@ export default function Navbar() {
         <li><a href="#skills" className="nav-link">Skills</a></li>
         <li><a href="#contact-me" className="nav-link">Contact</a></li>
         <li><Link to="/FunFacts" className="nav-link">Fun Facts</Link></li>
+
+        {isAuthenticated && <span className="nav-user">Hola, {user.email}</span>}
       </ul>
     </nav>
   );

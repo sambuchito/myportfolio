@@ -64,7 +64,7 @@ function App() {
           {/* Login */}
           <Route path="/login" element={<Login />} />
 
-          {/* FunFacts protegido */}
+          {/* FunFacts protected */}
           <Route
             path="/FunFacts"
             element={

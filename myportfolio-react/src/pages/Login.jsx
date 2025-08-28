@@ -5,7 +5,7 @@ import '../assets/css/socials.css'
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import SocialIcons from '../components/SocialIcons';
-//import { useAuth } from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 export default function Login() {
   const [formData, setFormData] = useState({ username: "", password: "", });
@@ -14,6 +14,8 @@ export default function Login() {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/FunFacts";
+
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,8 +30,18 @@ export default function Login() {
     setIsLoading(true);
     setError("");
 
+    const success = login(formData.email, formData.password);
+
+    if (success) {
+      navigate(from, { replace: true });
+    } else {
+      setError("Invalid user or password");
+    }
+    setIsLoading(false);
+  };
+
     // Simulación de login
-    setTimeout(() => {
+    /* setTimeout(() => {
       if (formData.email === "admin@mail.com" && formData.password === "1234") {
         alert("Success!");
         localStorage.setItem("isLoggedIn", "true");
@@ -40,7 +52,7 @@ export default function Login() {
       }
       setIsLoading(false);
     }, 1000);
-  };
+  }; */
 
   return (
   <div className="login-container">
@@ -68,7 +80,7 @@ export default function Login() {
         </div>
 
         <div className="form-input">
-          <label htmlFor="password">Contraseña</label>
+          <label htmlFor="password">Password</label>
           <input
             type="password"
             id="password"

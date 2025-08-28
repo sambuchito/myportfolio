@@ -1,12 +1,17 @@
-import { Navigate, useLocation } from "react-router-dom";
+// components/PrivateRoute.jsx
 import { useAuth } from "../context/AuthContext";
+import { Navigate, useLocation } from "react-router-dom";
 
-export default function PrivateRoute({ children }) {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+const PrivateRoute = ({ children }) => {
+  const { isAuthenticated } = useAuth();
   const location = useLocation();
 
-  if (!isLoggedIn) {
+  if (!isAuthenticated) {
+    // Redirige al login pero guarda la ruta original para volver después
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
+
   return children;
-}
+};
+
+export default PrivateRoute;

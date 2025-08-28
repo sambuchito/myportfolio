@@ -16,12 +16,10 @@ useEffect(() => {
     setLoading(false);
   }, []);
 
-  const login = (username, password) => {
-  if (username === "admin@mail.com" && password === "1234") {
-    const userData = { name: "Admin", email: username };
-    setUser(userData);
+  const login = (email, password) => {
+  if (email && password) {
     setIsAuthenticated(true);
-    localStorage.setItem("authUser", JSON.stringify(userData));
+    setUser({ email })
     return true;
   }
   return false;
